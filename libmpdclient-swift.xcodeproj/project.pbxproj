@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27D1207C2C4E3EC50085B6C5 /* libmpdclient_swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1207B2C4E3EC50085B6C5 /* libmpdclient_swift.swift */; };
+		27D120842C4E3F070085B6C5 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D120832C4E3F070085B6C5 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		27D120782C4E3EC50085B6C5 /* liblibmpdclient-swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "liblibmpdclient-swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		27D1207B2C4E3EC50085B6C5 /* libmpdclient_swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = libmpdclient_swift.swift; sourceTree = "<group>"; };
+		27D120832C4E3F070085B6C5 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +41,8 @@
 		27D1206F2C4E3EC50085B6C5 = {
 			isa = PBXGroup;
 			children = (
-				27D1207A2C4E3EC50085B6C5 /* libmpdclient-swift */,
+				27D120832C4E3F070085B6C5 /* Package.swift */,
+				27D120822C4E3EE10085B6C5 /* Sources */,
 				27D120792C4E3EC50085B6C5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +55,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		27D1207A2C4E3EC50085B6C5 /* libmpdclient-swift */ = {
+		27D120822C4E3EE10085B6C5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				27D1207B2C4E3EC50085B6C5 /* libmpdclient_swift.swift */,
 			);
-			path = "libmpdclient-swift";
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,6 +94,7 @@
 				TargetAttributes = {
 					27D120772C4E3EC50085B6C5 = {
 						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
 					};
 				};
 			};
@@ -120,7 +121,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27D1207C2C4E3EC50085B6C5 /* libmpdclient_swift.swift in Sources */,
+				27D120842C4E3F070085B6C5 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,11 +250,13 @@
 		27D120802C4E3EC50085B6C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BXPDGBHTD7;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -262,6 +265,7 @@
 		27D120812C4E3EC50085B6C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BXPDGBHTD7;
 				OTHER_LDFLAGS = "-ObjC";
