@@ -1,3 +1,4 @@
 [submodule "Sources/libmpdclient"]
 	path = Sources/libmpdclient
 	url = https://github.com/zluo01/libmpdclient.git
+	branch = master
