@@ -31,6 +31,8 @@ jobs:
       - name: Commit and push changes
         if: success() # This step will only run if the previous step is successful
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "Sync libmpdclient to head." || echo "No changes to commit"
           git push
