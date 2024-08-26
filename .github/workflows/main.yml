@@ -1,0 +1,36 @@
+name: Update Submodules
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # This schedule runs daily at midnight UTC
+  workflow_dispatch: # Allows manual triggering from GitHub UI
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true # Fetches the submodules
+
+      - name: Update submodules
+        run: |
+          # Update the submodules to the latest commit
+          git submodule update --remote
+          # Check if there are changes in submodules
+          if [ -n "$(git diff --submodule)" ]; then
+            echo "libmpdclient updated."
+            git diff --submodule
+          else
+            echo "No updates."
+            exit 1 # Exit with non-zero status to skip further steps if no changes
+          fi
+
+      - name: Commit and push changes
+        if: success() # This step will only run if the previous step is successful
+        run: |
+          git add .
+          git commit -m "Sync libmpdclient to head." || echo "No changes to commit"
+          git push
